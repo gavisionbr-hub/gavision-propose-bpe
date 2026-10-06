@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gavision Studio × BPE · Proposta de Ativação</title>
+    <title>Proposta Comercial — Gavision Studio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
         }
 
         body {
-            background: #e8e8ec;
+            background: #e5e7eb;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #1f2937;
             padding: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            line-height: 1.65;
         }
 
         /* ===== FOLHA A4 ===== */
@@ -25,221 +27,258 @@
             width: 210mm;
             min-height: 297mm;
             background: #ffffff;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            margin-bottom: 30px;
-            padding: 24mm 20mm;
+            margin-bottom: 24px;
+            padding: 22mm 22mm 20mm;
             position: relative;
-            color: #1a1a1a;
-            line-height: 1.6;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             page-break-after: always;
         }
 
         /* ===== CAPA ===== */
         .capa {
-            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #7b2cbf 100%);
-            color: white;
+            padding: 40mm 22mm 22mm;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 30mm 20mm;
-            position: relative;
-            overflow: hidden;
         }
 
-        .capa::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255, 107, 0, 0.25), transparent 70%);
-            border-radius: 50%;
+        .capa-topo {
+            border-bottom: 3px solid #1e3a5f;
+            padding-bottom: 16px;
+            margin-bottom: 60px;
         }
 
-        .capa::after {
-            content: "";
-            position: absolute;
-            bottom: -80px;
-            left: -80px;
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle, rgba(255, 209, 102, 0.18), transparent 70%);
-            border-radius: 50%;
-        }
-
-        .capa .topo {
-            position: relative;
-            z-index: 2;
-        }
-
-        .capa .badge-doc {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
+        .capa-topo .marca {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: #1e3a5f;
+            font-weight: 700;
             text-transform: uppercase;
-            font-weight: 600;
         }
 
-        .capa .centro {
-            position: relative;
-            z-index: 2;
-            margin: 40px 0;
+        .capa-topo .marca-sub {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+
+        .capa-conteudo {
+            flex-grow: 1;
+        }
+
+        .capa-tipo {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            color: #6b7280;
+            text-transform: uppercase;
+            margin-bottom: 24px;
         }
 
         .capa h1 {
-            font-size: 3.2rem;
-            font-weight: 300;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-            margin-bottom: 18px;
+            font-size: 2.6rem;
+            font-weight: 400;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
         .capa h1 strong {
-            font-weight: 800;
-            color: #ff6b00;
+            font-weight: 700;
         }
 
-        .capa .subtitulo-capa {
-            font-size: 1.15rem;
-            opacity: 0.85;
-            max-width: 480px;
-            line-height: 1.6;
-            font-weight: 300;
+        .capa .divisor {
+            width: 60px;
+            height: 4px;
+            background: #c05621;
+            margin: 28px 0;
         }
 
-        .capa .rodape-capa {
-            position: relative;
-            z-index: 2;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            padding-top: 20px;
+        .capa .resumo {
+            font-size: 1.05rem;
+            color: #4b5563;
+            max-width: 460px;
+            line-height: 1.7;
+        }
+
+        .capa-rodape {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .capa-rodape .bloco-titulo {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: 6px;
+        }
+
+        .capa-rodape .bloco-valor {
+            font-size: 0.95rem;
+            color: #1f2937;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .capa-rodape .bloco-valor small {
+            display: block;
+            font-weight: 400;
+            color: #6b7280;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        /* ===== CONTEÚDO DAS PÁGINAS ===== */
+        .cabecalho-pagina {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 12px;
+            align-items: center;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 32px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9ca3af;
         }
 
-        .capa .rodape-capa .info {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        .capa .rodape-capa .info strong {
-            display: block;
-            font-weight: 600;
-            opacity: 1;
-            margin-bottom: 2px;
-            color: #ffd166;
-        }
-
-        .capa .logo-fake {
-            font-size: 1rem;
+        .cabecalho-pagina .marca-doc {
             font-weight: 700;
-            letter-spacing: 1px;
-            color: #ff6b00;
+            color: #1e3a5f;
         }
 
-        /* ===== TIPOGRAFIA INTERNA ===== */
-        .pagina h2 {
-            font-size: 1.7rem;
+        h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: #1a0a2e;
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #ff6b00;
+            color: #0f172a;
+            margin-bottom: 6px;
             letter-spacing: -0.3px;
         }
 
-        .pagina h2 .num {
-            display: inline-block;
-            background: #ff6b00;
-            color: white;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 34px;
-            font-size: 0.95rem;
-            margin-right: 12px;
-            vertical-align: middle;
-            font-weight: 700;
+        h2 .num-secao {
+            color: #c05621;
+            margin-right: 10px;
         }
 
-        .pagina h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #7b2cbf;
-            margin: 22px 0 10px;
+        .subtitulo-secao {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: 24px;
         }
 
-        .pagina p {
+        h3 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin: 26px 0 10px;
+        }
+
+        p {
             font-size: 0.95rem;
-            color: #333;
-            margin-bottom: 12px;
+            color: #374151;
+            margin-bottom: 14px;
             text-align: justify;
         }
 
-        .pagina strong {
-            color: #1a0a2e;
+        strong {
+            color: #0f172a;
+            font-weight: 700;
         }
 
-        .pagina em {
-            color: #7b2cbf;
-            font-style: normal;
-            font-weight: 600;
+        ul, ol {
+            margin: 12px 0 16px 22px;
         }
 
-        .pagina ul {
-            margin: 12px 0 16px 20px;
-        }
-
-        .pagina ul li {
-            font-size: 0.95rem;
+        li {
+            font-size: 0.94rem;
+            color: #374151;
             margin-bottom: 8px;
-            color: #333;
-            line-height: 1.55;
+            line-height: 1.6;
         }
 
-        .pagina ul li strong {
-            color: #1a0a2e;
-        }
-
-        /* ===== CAIXAS DE DESTAQUE ===== */
-        .caixa-destaque {
-            background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
-            border-left: 5px solid #ff6b00;
-            padding: 18px 22px;
-            border-radius: 8px;
+        /* ===== CAIXAS INSTITUCIONAIS ===== */
+        .callout {
+            border-left: 3px solid #c05621;
+            background: #faf8f5;
+            padding: 16px 20px;
             margin: 20px 0;
         }
 
-        .caixa-destaque p {
+        .callout p {
             margin: 0;
-            font-size: 0.95rem;
-            color: #333;
+            font-size: 0.92rem;
+            color: #374151;
         }
 
-        .caixa-destaque strong {
-            color: #c0392b;
-        }
-
-        .caixa-roxo {
-            background: linear-gradient(135deg, #f5f0ff 0%, #ebe0ff 100%);
-            border-left: 5px solid #7b2cbf;
-            padding: 18px 22px;
-            border-radius: 8px;
+        .callout-azul {
+            border-left: 3px solid #1e3a5f;
+            background: #f5f7fa;
+            padding: 16px 20px;
             margin: 20px 0;
         }
 
-        .caixa-roxo p {
+        .callout-azul p {
             margin: 0;
-            font-size: 0.95rem;
-            color: #333;
+            font-size: 0.92rem;
+            color: #374151;
+        }
+
+        /* ===== TABELAS ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0 24px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.88rem;
+        }
+
+        table th {
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 11px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e5e7eb;
+            color: #374151;
+            vertical-align: top;
+        }
+
+        table tr:nth-child(even) td {
+            background: #f9fafb;
+        }
+
+        table td.destaque {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        table td.valor {
+            text-align: right;
+            font-weight: 700;
+            color: #c05621;
+            white-space: nowrap;
         }
 
         /* ===== MÉTRICAS ===== */
@@ -250,260 +289,172 @@
             margin: 22px 0;
         }
 
-        .metrica-card {
-            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 100%);
-            color: white;
-            padding: 20px 14px;
-            border-radius: 14px;
+        .metrica-bloco {
+            border: 1px solid #e5e7eb;
+            padding: 20px 16px;
             text-align: center;
+            background: #ffffff;
         }
 
-        .metrica-card .numero {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #ff6b00;
+        .metrica-bloco .valor {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a5f;
             display: block;
             line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .metrica-card .rotulo {
-            font-size: 0.72rem;
-            opacity: 0.85;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            line-height: 1.3;
-        }
-
-        /* ===== FLUXO / PASSOS ===== */
-        .passos {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin: 18px 0;
-        }
-
-        .passo-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            background: #fafafa;
-            border: 1px solid #f0f0f0;
-            border-radius: 12px;
-            padding: 16px 18px;
-        }
-
-        .passo-item .passo-num {
-            flex-shrink: 0;
-            width: 34px;
-            height: 34px;
-            background: #ff6b00;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-
-        .passo-item .passo-conteudo strong {
-            display: block;
-            font-size: 0.98rem;
-            color: #1a0a2e;
-            margin-bottom: 3px;
-        }
-
-        .passo-item .passo-conteudo p {
-            margin: 0;
-            font-size: 0.88rem;
-            color: #555;
-            text-align: left;
-        }
-
-        /* ===== TABELA ===== */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 18px 0;
-            font-size: 0.88rem;
-        }
-
-        table th {
-            background: #1a0a2e;
-            color: white;
-            padding: 12px 14px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        table th:first-child {
-            border-radius: 8px 0 0 0;
-        }
-
-        table th:last-child {
-            border-radius: 0 8px 0 0;
-        }
-
-        table td {
-            padding: 12px 14px;
-            border-bottom: 1px solid #eee;
-            color: #333;
-        }
-
-        table tr:nth-child(even) td {
-            background: #fafafa;
-        }
-
-        table td strong {
-            color: #7b2cbf;
-        }
-
-        /* ===== CARDS DE RECURSOS ===== */
-        .recursos-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin: 18px 0;
-        }
-
-        .recurso-card {
-            background: #ffffff;
-            border: 1.5px solid #f0f0f0;
-            border-radius: 14px;
-            padding: 18px;
-            transition: all 0.2s;
-        }
-
-        .recurso-card .icone {
-            font-size: 1.6rem;
             margin-bottom: 8px;
         }
 
-        .recurso-card .titulo {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #1a0a2e;
-            margin-bottom: 6px;
-        }
-
-        .recurso-card .texto {
-            font-size: 0.82rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* ===== CTA FINAL ===== */
-        .cta-box {
-            background: linear-gradient(135deg, #7b2cbf 0%, #ff6b00 100%);
-            color: white;
-            padding: 28px;
-            border-radius: 18px;
-            text-align: center;
-            margin-top: 26px;
-        }
-
-        .cta-box h3 {
-            color: white;
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .cta-box p {
-            color: white;
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            opacity: 0.95;
-        }
-
-        .cta-box .contato {
-            display: inline-block;
-            background: white;
-            color: #7b2cbf;
-            font-weight: 700;
-            font-size: 0.95rem;
-            padding: 12px 32px;
-            border-radius: 40px;
-            text-decoration: none;
-        }
-
-        /* ===== RODAPÉ PÁGINA ===== */
-        .rodape-pagina {
-            position: absolute;
-            bottom: 12mm;
-            left: 20mm;
-            right: 20mm;
-            display: flex;
-            justify-content: space-between;
+        .metrica-bloco .rotulo {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             font-size: 0.7rem;
-            color: #aaa;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #6b7280;
+            line-height: 1.4;
         }
 
-        .rodape-pagina .marca {
+        /* ===== PASSOS NUMERADOS ===== */
+        .passos {
+            margin: 18px 0;
+        }
+
+        .passo {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .passo:last-child {
+            border-bottom: none;
+        }
+
+        .passo .passo-num {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.1rem;
             font-weight: 700;
-            color: #7b2cbf;
+            color: #c05621;
+            padding-top: 2px;
         }
 
-        /* ===== ÍNDICE ===== */
-        .indice-lista {
+        .passo .passo-titulo {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .passo .passo-desc {
+            font-size: 0.9rem;
+            color: #4b5563;
+            line-height: 1.55;
+        }
+
+        /* ===== SUMÁRIO ===== */
+        .sumario {
             margin: 20px 0;
         }
 
-        .indice-item {
-            display: flex;
-            align-items: center;
+        .sumario-item {
+            display: grid;
+            grid-template-columns: 40px 1fr auto;
             gap: 14px;
             padding: 12px 0;
             border-bottom: 1px solid #f0f0f0;
-            font-size: 0.95rem;
-        }
-
-        .indice-item .indice-num {
-            width: 30px;
-            height: 30px;
-            background: #f0f0f0;
-            color: #7b2cbf;
-            border-radius: 8px;
-            display: flex;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
             align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            flex-shrink: 0;
         }
 
-        .indice-item .indice-titulo {
-            font-weight: 600;
-            color: #1a0a2e;
+        .sumario-item .s-num {
+            color: #c05621;
+            font-weight: 700;
+        }
+
+        .sumario-item .s-titulo {
+            color: #1f2937;
+        }
+
+        .sumario-item .s-pagina {
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+
+        /* ===== ASSINATURA ===== */
+        .assinatura {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .assinatura-bloco {
+            border-top: 1px solid #0f172a;
+            padding-top: 8px;
+        }
+
+        .assinatura-bloco .linha-nome {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .assinatura-bloco .linha-cargo {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.78rem;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        /* ===== RODAPÉ ===== */
+        .rodape-pagina {
+            position: absolute;
+            bottom: 12mm;
+            left: 22mm;
+            right: 22mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            border-top: 1px solid #e5e7eb;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .rodape-pagina .marca-rodape {
+            font-weight: 700;
+            color: #1e3a5f;
         }
 
         /* ===== RESPONSIVO ===== */
         @media (max-width: 800px) {
-            body { padding: 20px 10px; }
+            body { padding: 16px 8px; }
             .pagina {
                 width: 100%;
-                min-height: auto;
-                padding: 24px 20px;
+                padding: 24px 18px 20px;
             }
-            .capa { padding: 30px 20px; }
-            .capa h1 { font-size: 2.2rem; }
-            .capa .subtitulo-capa { font-size: 1rem; }
-            .pagina h2 { font-size: 1.35rem; }
+            .capa { padding: 30px 18px 20px; }
+            .capa h1 { font-size: 1.9rem; }
+            .capa-rodape { grid-template-columns: 1fr; gap: 16px; }
             .metricas-grid { grid-template-columns: 1fr; }
-            .recursos-grid { grid-template-columns: 1fr; }
+            .assinatura { grid-template-columns: 1fr; gap: 24px; }
             .rodape-pagina { position: static; margin-top: 30px; }
+            table { font-size: 0.8rem; }
+            table th, table td { padding: 9px 8px; }
         }
 
-        /* ===== PRINT ===== */
+        /* ===== IMPRESSÃO ===== */
         @media print {
             body {
-                background: white;
+                background: #ffffff;
                 padding: 0;
             }
             .pagina {
@@ -513,12 +464,10 @@
                 min-height: auto;
                 page-break-after: always;
             }
-            .capa {
-                page-break-after: always;
-            }
+            .capa { page-break-after: always; }
             .rodape-pagina {
                 position: static;
-                margin-top: 20px;
+                margin-top: 30px;
             }
         }
     </style>
@@ -527,453 +476,685 @@
 
     <!-- ============ PÁGINA 1 — CAPA ============ -->
     <div class="pagina capa">
-        <div class="topo">
-            <span class="badge-doc">Proposta de Parceria · 2026</span>
+        <div class="capa-topo">
+            <div class="marca">GAVISION STUDIO</div>
+            <div class="marca-sub">FOTOGRAFIA · EXPERIÊNCIA · MARKETING</div>
         </div>
 
-        <div class="centro">
+        <div class="capa-conteudo">
+            <div class="capa-tipo">Proposta Comercial</div>
             <h1>
-                Transformando <strong>conexões</strong><br />
-                em <strong>dados</strong> e <strong>lembranças</strong>.
+                Ativação de Marketing<br />
+                Experiencial com <strong>Instax Biz</strong><br />
+                para o <strong>BPE 2026</strong>
             </h1>
-            <p class="subtitulo-capa">
-                Uma proposta da Gavision Studio para elevar a experiência e a mensuração do
-                <strong style="color:#ffd166;">Bahia Potência Empreendedora (BPE)</strong> através
-                do marketing experiencial com Instax Biz.
+            <div class="divisor"></div>
+            <p class="resumo">
+                Uma proposta para transformar a experiência dos participantes do
+                Bahia Potência Empreendedora em dados mensuráveis, conexões duradouras
+                e lembranças físicas que continuam trabalhando pela marca do evento.
             </p>
         </div>
 
-        <div class="rodape-capa">
-            <div class="info">
-                <strong>Apresentado a</strong>
-                Kleison Melo · Fundador do BPE
+        <div class="capa-rodape">
+            <div>
+                <div class="bloco-titulo">Apresentado a</div>
+                <div class="bloco-valor">
+                    Kleison Melo
+                    <small>Fundador · Bahia Potência Empreendedora</small>
+                </div>
             </div>
-            <div class="info">
-                <strong>Por</strong>
-                Gavision Studio
-            </div>
-            <div class="logo-fake">
-                GAVISION<br />
-                <span style="font-size:0.7rem; font-weight:400; color:#aaa;">STUDIO</span>
+            <div>
+                <div class="bloco-titulo">Apresentado por</div>
+                <div class="bloco-valor">
+                    Gavision Studio
+                    <small>Salvador · Bahia · Brasil</small>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- ============ PÁGINA 2 — SUMÁRIO EXECUTIVO ============ -->
     <div class="pagina">
-        <h2>Sumário Executivo</h2>
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
+        </div>
+
+        <h2><span class="num-secao">01</span>Sumário Executivo</h2>
+        <div class="subtitulo-secao">Visão Geral da Proposta</div>
 
         <p>
-            O <strong>Bahia Potência Empreendedora</strong> reúne 2.000 empresários em um dos
-            maiores encontros de negócios do estado. Cada edição consolida a marca BPE como
-            referência em conexão, conteúdo e networking de alto nível.
+            O Bahia Potência Empreendedora reuniu 2.000 empresários em uma das maiores
+            iniciativas de conexão e conteúdo do estado. Cada edição consolida a marca
+            BPE como referência em networking de alto nível na Bahia.
         </p>
 
         <p>
-            Esta proposta apresenta uma forma de <em>potencializar o impacto do evento</em> ao
-            transformar cada participante em um ponto de contato mensurável, através da
-            fotografia instantânea <strong>Instax Biz</strong> da Fujifilm.
+            Esta proposta apresenta uma forma de potencializar o impacto do evento através
+            da fotografia instantânea <strong>Instax Biz</strong>, transformando cada
+            participante em um ponto de contato mensurável e cada foto em um ativo de
+            marketing rastreável.
         </p>
 
-        <div class="caixa-destaque">
+        <div class="callout">
             <p>
-                <strong>Em uma frase:</strong> não é um photo booth. É uma ferramenta
-                estratégica que gera <strong>engajamento real</strong>, <strong>dados concretos</strong>
-                e uma <strong>lembrança física</strong> que continua trabalhando pela marca do BPE
-                muito depois do evento terminar.
+                <strong>Resumo em uma frase:</strong> não se trata de um photo booth
+                decorativo, mas de uma ferramenta estratégica que gera engajamento real,
+                dados concretos e lembrança física duradoura para a marca BPE.
             </p>
         </div>
 
-        <h3>O que este documento apresenta</h3>
-
-        <div class="indice-lista">
-            <div class="indice-item">
-                <div class="indice-num">1</div>
-                <div class="indice-titulo">O Desafio: engajamento e mensuração em eventos de grande porte</div>
+        <h3>Estrutura do Documento</h3>
+        <div class="sumario">
+            <div class="sumario-item">
+                <span class="s-num">01</span>
+                <span class="s-titulo">Sumário Executivo</span>
+                <span class="s-pagina">Pág. 02</span>
             </div>
-            <div class="indice-item">
-                <div class="indice-num">2</div>
-                <div class="indice-titulo">A Solução: Instax Biz como ferramenta de marketing experiencial</div>
+            <div class="sumario-item">
+                <span class="s-num">02</span>
+                <span class="s-titulo">Diagnóstico do Desafio</span>
+                <span class="s-pagina">Pág. 03</span>
             </div>
-            <div class="indice-item">
-                <div class="indice-num">3</div>
-                <div class="indice-titulo">Como funciona na prática: da foto ao dado</div>
+            <div class="sumario-item">
+                <span class="s-num">03</span>
+                <span class="s-titulo">Solução Proposta</span>
+                <span class="s-pagina">Pág. 04</span>
             </div>
-            <div class="indice-item">
-                <div class="indice-num">4</div>
-                <div class="indice-titulo">Resultados comprovados e métricas reais</div>
+            <div class="sumario-item">
+                <span class="s-num">04</span>
+                <span class="s-titulo">Metodologia de Operação</span>
+                <span class="s-pagina">Pág. 05</span>
             </div>
-            <div class="indice-item">
-                <div class="indice-num">5</div>
-                <div class="indice-titulo">Proposta de ativação no BPE</div>
+            <div class="sumario-item">
+                <span class="s-num">05</span>
+                <span class="s-titulo">Indicadores de Resultado</span>
+                <span class="s-pagina">Pág. 06</span>
             </div>
-            <div class="indice-item">
-                <div class="indice-num">6</div>
-                <div class="indice-titulo">Próximos passos</div>
+            <div class="sumario-item">
+                <span class="s-num">06</span>
+                <span class="s-titulo">Escopo de Ativação</span>
+                <span class="s-pagina">Pág. 07</span>
+            </div>
+            <div class="sumario-item">
+                <span class="s-num">07</span>
+                <span class="s-titulo">Investimento</span>
+                <span class="s-pagina">Pág. 08</span>
+            </div>
+            <div class="sumario-item">
+                <span class="s-num">08</span>
+                <span class="s-titulo">Próximos Passos</span>
+                <span class="s-pagina">Pág. 09</span>
             </div>
         </div>
 
         <div class="rodape-pagina">
-            <span class="marca">GAVISION STUDIO</span>
-            <span>Proposta BPE · Página 2</span>
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 02</span>
         </div>
     </div>
 
-    <!-- ============ PÁGINA 3 — O DESAFIO ============ -->
+    <!-- ============ PÁGINA 3 — DIAGNÓSTICO DO DESAFIO ============ -->
     <div class="pagina">
-        <h2><span class="num">1</span>O Desafio</h2>
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
+        </div>
+
+        <h2><span class="num-secao">02</span>Diagnóstico do Desafio</h2>
+        <div class="subtitulo-secao">Contexto e Oportunidade</div>
 
         <p>
-            Organizar um evento como o BPE é dominar a arte de conectar pessoas. Mas existe um
-            ponto onde todo grande evento encontra um limite: <strong>como medir o impacto real
-            do networking? Como perpetuar a lembrança do encontro para além do dia?</strong>
+            Organizar um evento da magnitude do BPE é dominar a arte de conectar pessoas.
+            No entanto, todo grande encontro empresarial encontra um limite operacional
+            comum: a dificuldade de mensurar o impacto real do networking e de perpetuar
+            a lembrança do encontro após o encerramento.
         </p>
 
-        <h3>Os três desafios silenciosos de eventos de grande porte</h3>
+        <h3>Três Desafios Estruturais</h3>
 
-        <ul>
-            <li>
-                <strong>Engajamento passageiro:</strong> as conexões acontecem, mas raramente
-                geram continuidade. As pessoas se conhecem e se perdem no meio da multidão.
-            </li>
-            <li>
-                <strong>Fotos que desaparecem:</strong> 90% das fotos tiradas em eventos ficam
-                presas na galeria do celular. Não circulam, não geram conteúdo, não voltam.
-            </li>
-            <li>
-                <strong>Marketing sem métrica:</strong> como saber quantas pessoas realmente
-                engajaram com a marca do evento? Panfletos, banners e brindes não medem nada.
-            </li>
-        </ul>
+        <div class="passos">
+            <div class="passo">
+                <div class="passo-num">01</div>
+                <div>
+                    <div class="passo-titulo">Engajamento Passageiro</div>
+                    <div class="passo-desc">
+                        As conexões acontecem, mas raramente se convertem em continuidade.
+                        Participantes se conhecem, trocam contatos e se perdem no volume
+                        de informações do pós-evento.
+                    </div>
+                </div>
+            </div>
+            <div class="passo">
+                <div class="passo-num">02</div>
+                <div>
+                    <div class="passo-titulo">Fotos que Não Circulam</div>
+                    <div class="passo-desc">
+                        A grande maioria das fotografias produzidas em eventos permanece
+                        restrita às galerias dos celulares. Não geram conteúdo, não
+                        viralizam, não retornam à marca.
+                    </div>
+                </div>
+            </div>
+            <div class="passo">
+                <div class="passo-num">03</div>
+                <div>
+                    <div class="passo-titulo">Ausência de Métricas</div>
+                    <div class="passo-desc">
+                        Brindes, panfletos e banners são ativações de mão única. Não
+                        permitem mensurar quantos participantes efetivamente engajaram
+                        com a marca do evento.
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div class="caixa-roxo">
+        <div class="callout-azul">
             <p>
-                <strong>O custo real desse cenário:</strong> o BPE investe em palestrantes
-                renomados, estrutura e produção para 2.000 pessoas — mas não tem dados concretos
-                sobre o retorno em <em>engajamento individual</em>. Essa é a lacuna que a
-                Gavision Studio propõe preencher.
+                <strong>O impacto desse cenário:</strong> o BPE investe em palestrantes,
+                estrutura e produção para 2.000 pessoas sem dispor de dados concretos
+                sobre o engajamento individual. Essa é a lacuna que a Gavision Studio
+                propõe preencher.
             </p>
         </div>
 
         <div class="rodape-pagina">
-            <span class="marca">GAVISION STUDIO</span>
-            <span>Proposta BPE · Página 3</span>
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 03</span>
         </div>
     </div>
 
-    <!-- ============ PÁGINA 4 — A SOLUÇÃO ============ -->
+    <!-- ============ PÁGINA 4 — SOLUÇÃO PROPOSTA ============ -->
     <div class="pagina">
-        <h2><span class="num">2</span>A Solução</h2>
-
-        <p>
-            A Gavision Studio propõe a instalação de um <strong>Ponto de Conexão</strong> no BPE:
-            um espaço onde cada participante cria uma <em>lembrança física personalizada</em>
-            que carrega a marca do evento, um QR code inteligente e um canal direto de
-            relacionamento.
-        </p>
-
-        <h3>Por que Instax Biz e não um photo booth comum?</h3>
-
-        <div class="recursos-grid">
-            <div class="recurso-card">
-                <div class="icone">🖼️</div>
-                <div class="titulo">Moldura Personalizada</div>
-                <div class="texto">
-                    Cada foto é impressa com template exclusivo do BPE — logo, tema do evento
-                    e assinatura visual.
-                </div>
-            </div>
-
-            <div class="recurso-card">
-                <div class="icone">📊</div>
-                <div class="titulo">Métricas de Acesso ao QR Code</div>
-                <div class="texto">
-                    Acompanhe em tempo real quantas pessoas escanearam o QR impresso na foto,
-                    por data e por template.
-                </div>
-            </div>
-
-            <div class="recurso-card">
-                <div class="icone">🔗</div>
-                <div class="titulo">Link Dinâmico</div>
-                <div class="texto">
-                    Altere o destino do QR <strong>mesmo após a impressão</strong>. Direcione
-                    para WhatsApp, site, pesquisa ou oferta especial.
-                </div>
-            </div>
-
-            <div class="recurso-card">
-                <div class="icone">📈</div>
-                <div class="titulo">Resultados Comprovados</div>
-                <div class="texto">
-                    Casos reais registram <strong>taxas de acesso de até 43%</strong>,
-                    superando campanhas digitais tradicionais.
-                </div>
-            </div>
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
         </div>
 
-        <div class="caixa-destaque">
+        <h2><span class="num-secao">03</span>Solução Proposta</h2>
+        <div class="subtitulo-secao">Marketing Experiencial com Instax Biz</div>
+
+        <p>
+            A Gavision Studio propõe a instalação de um <strong>Ponto de Conexão</strong>
+            no BPE: um espaço onde cada participante produz uma lembrança física
+            personalizada, contendo a marca do evento, um QR code inteligente e um canal
+            direto de relacionamento com a organização.
+        </p>
+
+        <h3>Diferenciais da Ativação</h3>
+
+        <table>
+            <tr>
+                <th style="width: 32%;">Recurso</th>
+                <th>Descrição e Aplicação</th>
+            </tr>
+            <tr>
+                <td class="destaque">Moldura Personalizada</td>
+                <td>
+                    Cada foto é impressa com template exclusivo do BPE, contendo logo,
+                    tema do evento e assinatura visual.
+                </td>
+            </tr>
+            <tr>
+                <td class="destaque">Métricas de Acesso ao QR Code</td>
+                <td>
+                    Acompanhamento em tempo real do número de escaneamentos, por data
+                    e por template, diretamente no aplicativo Instax Biz.
+                </td>
+            </tr>
+            <tr>
+                <td class="destaque">Link Dinâmico</td>
+                <td>
+                    Possibilidade de alterar o destino do QR code mesmo após a impressão.
+                    Permite direcionamento para redes sociais, pesquisas, ofertas ou
+                    conteúdo exclusivo.
+                </td>
+            </tr>
+            <tr>
+                <td class="destaque">Resultados Comprovados</td>
+                <td>
+                    Casos documentados registram taxas de acesso ao QR code de até 43%,
+                    superando os indicadores médios de campanhas digitais tradicionais.
+                </td>
+            </tr>
+        </table>
+
+        <div class="callout">
             <p>
-                <strong>O diferencial:</strong> cada foto se torna um <em>ativo de marketing</em>.
-                Não é apenas uma lembrança — é um ponto de contato rastreável, personalizável e
-                com resultados mensuráveis.
+                <strong>O diferencial estratégico:</strong> cada foto se torna um ativo
+                de marketing. Não é apenas uma lembrança: é um ponto de contato
+                rastreável, personalizável e com resultados mensuráveis.
             </p>
         </div>
 
         <div class="rodape-pagina">
-            <span class="marca">GAVISION STUDIO</span>
-            <span>Proposta BPE · Página 4</span>
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 04</span>
         </div>
     </div>
 
-    <!-- ============ PÁGINA 5 — COMO FUNCIONA ============ -->
+    <!-- ============ PÁGINA 5 — METODOLOGIA DE OPERAÇÃO ============ -->
     <div class="pagina">
-        <h2><span class="num">3</span>Como Funciona na Prática</h2>
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
+        </div>
+
+        <h2><span class="num-secao">04</span>Metodologia de Operação</h2>
+        <div class="subtitulo-secao">Da Captura à Métrica</div>
 
         <p>
-            A operação é simples, rápida e não depende de internet ou energia elétrica. Cada
-            impressão leva cerca de 12 segundos — rápido o suficiente para atender uma fila
-            sem gerar gargalos.
+            A operação é simples, rápida e não depende de infraestrutura de internet ou
+            de energia elétrica no local. Cada impressão leva aproximadamente 12 segundos,
+            o que permite atendimento fluido mesmo em períodos de pico.
         </p>
 
         <div class="passos">
-            <div class="passo-item">
-                <div class="passo-num">1</div>
-                <div class="passo-conteudo">
-                    <strong>O participante chega ao Ponto de Conexão</strong>
-                    <p>Um espaço com a identidade visual do BPE convida o participante a registrar o momento.</p>
+            <div class="passo">
+                <div class="passo-num">01</div>
+                <div>
+                    <div class="passo-titulo">Recepção do Participante</div>
+                    <div class="passo-desc">
+                        O Ponto de Conexão recebe o participante com ambientação visual
+                        alinhada à identidade do BPE.
+                    </div>
                 </div>
             </div>
-
-            <div class="passo-item">
-                <div class="passo-num">2</div>
-                <div class="passo-conteudo">
-                    <strong>A foto é capturada e impressa na hora</strong>
-                    <p>Em até 12 segundos, a foto sai com a moldura personalizada do BPE e o QR code impresso.</p>
+            <div class="passo">
+                <div class="passo-num">02</div>
+                <div>
+                    <div class="passo-titulo">Captura e Impressão</div>
+                    <div class="passo-desc">
+                        A fotografia é capturada e impressa em até 12 segundos, já com a
+                        moldura personalizada do BPE e o QR code incorporado.
+                    </div>
                 </div>
             </div>
-
-            <div class="passo-item">
-                <div class="passo-num">3</div>
-                <div class="passo-conteudo">
-                    <strong>O QR code direciona para o destino escolhido</strong>
-                    <p>Pode ser um grupo de WhatsApp VIP, uma pesquisa, um cupom, ou o Instagram do BPE.</p>
+            <div class="passo">
+                <div class="passo-num">03</div>
+                <div>
+                    <div class="passo-titulo">Direcionamento via QR Code</div>
+                    <div class="passo-desc">
+                        Ao escanear, o participante é conduzido ao destino definido pela
+                        organização: grupo de WhatsApp, pesquisa, oferta especial ou
+                        perfil oficial do evento.
+                    </div>
                 </div>
             </div>
-
-            <div class="passo-item">
-                <div class="passo-num">4</div>
-                <div class="passo-conteudo">
-                    <strong>As métricas são registradas em tempo real</strong>
-                    <p>O aplicativo Instax Biz mostra quantos escanearam, quando e qual template gerou mais engajamento.</p>
+            <div class="passo">
+                <div class="passo-num">04</div>
+                <div>
+                    <div class="passo-titulo">Registro Automático de Métricas</div>
+                    <div class="passo-desc">
+                        O aplicativo registra em tempo real o número de acessos, o horário
+                        de cada escaneamento e o template utilizado.
+                    </div>
                 </div>
             </div>
-
-            <div class="passo-item">
-                <div class="passo-num">5</div>
-                <div class="passo-conteudo">
-                    <strong>Relatório pós-evento é entregue</strong>
-                    <p>A Gavision entrega um relatório com número de impressões, taxa de acesso ao QR e insights de engajamento.</p>
+            <div class="passo">
+                <div class="passo-num">05</div>
+                <div>
+                    <div class="passo-titulo">Relatório Pós-Evento</div>
+                    <div class="passo-desc">
+                        A Gavision entrega, em até 7 dias úteis, um relatório com número de
+                        impressões, taxa de acesso ao QR code e insights de engajamento.
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="rodape-pagina">
-            <span class="marca">GAVISION STUDIO</span>
-            <span>Proposta BPE · Página 5</span>
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 05</span>
         </div>
     </div>
 
-    <!-- ============ PÁGINA 6 — MÉTRICAS E RESULTADOS ============ -->
+    <!-- ============ PÁGINA 6 — INDICADORES DE RESULTADO ============ -->
     <div class="pagina">
-        <h2><span class="num">4</span>Resultados Comprovados</h2>
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
+        </div>
+
+        <h2><span class="num-secao">05</span>Indicadores de Resultado</h2>
+        <div class="subtitulo-secao">Métricas de Referência</div>
 
         <p>
-            As métricas abaixo vêm de casos reais da Instax Biz em eventos corporativos e
-            ativações de marca, documentados pela Fujifilm.
+            Os indicadores abaixo são provenientes de casos documentados pela Fujifilm
+            em ativações corporativas com a tecnologia Instax Biz.
         </p>
 
         <div class="metricas-grid">
-            <div class="metrica-card">
-                <span class="numero">43%</span>
-                <span class="rotulo">Taxa de acesso ao QR Code</span>
+            <div class="metrica-bloco">
+                <span class="valor">43%</span>
+                <span class="rotulo">Taxa de acesso<br />ao QR Code</span>
             </div>
-            <div class="metrica-card">
-                <span class="numero">12s</span>
-                <span class="rotulo">Tempo médio de impressão</span>
+            <div class="metrica-bloco">
+                <span class="valor">12s</span>
+                <span class="rotulo">Tempo médio<br />de impressão</span>
             </div>
-            <div class="metrica-card">
-                <span class="numero">100+</span>
-                <span class="rotulo">Impressões por bateria</span>
+            <div class="metrica-bloco">
+                <span class="valor">100+</span>
+                <span class="rotulo">Impressões<br />por bateria</span>
             </div>
         </div>
 
-        <h3>Por que esses números importam para o BPE</h3>
+        <h3>Aplicação ao Contexto do BPE</h3>
 
         <table>
             <tr>
-                <th>Métrica</th>
-                <th>Impacto para o evento</th>
+                <th style="width: 40%;">Indicador</th>
+                <th>Impacto Esperado</th>
             </tr>
             <tr>
-                <td><strong>43% de acesso ao QR</strong></td>
-                <td>Mais que o dobro da média de campanhas digitais tradicionais.</td>
+                <td class="destaque">Taxa de acesso ao QR Code</td>
+                <td>
+                    Projeção de até 43% de acessos sobre o total de fotos impressas,
+                    mais que o dobro da média de campanhas digitais tradicionais.
+                </td>
             </tr>
             <tr>
-                <td><strong>+20% de conversão em ação</strong></td>
-                <td>Participantes que escaneiam costumam realizar a ação proposta (seguir, preencher, comprar).</td>
+                <td class="destaque">Conversão em ação</td>
+                <td>
+                    Aproximadamente 20% dos participantes que escaneiam realizam a ação
+                    proposta — seguir, preencher formulário, acessar oferta.
+                </td>
             </tr>
             <tr>
-                <td><strong>Lembrança física duradoura</strong></td>
-                <td>Fotos Instax ficam guardadas em agendas, quadros e geladeiras — a marca continua presente.</td>
+                <td class="destaque">Lembrança física</td>
+                <td>
+                    A fotografia Instax permanece guardada por meses em agendas, quadros e
+                    geladeiras — mantendo a marca do BPE ativa no cotidiano do participante.
+                </td>
             </tr>
             <tr>
-                <td><strong>Conteúdo gerado pelo usuário</strong></td>
-                <td>Cada foto compartilhada nas redes é marketing autêntico e espontâneo.</td>
+                <td class="destaque">Conteúdo espontâneo</td>
+                <td>
+                    Cada foto compartilhada nas redes sociais gera mídia orgânica
+                    autêntica, ampliando o alcance do evento sem custo adicional.
+                </td>
             </tr>
         </table>
 
-        <div class="caixa-roxo">
+        <div class="callout-azul">
             <p>
-                <strong>O ponto central:</strong> em um evento de 2.000 pessoas, mesmo uma
-                adesão conservadora de 20% ao Ponto de Conexão significa
-                <em>400 fotos impressas</em> — e potencialmente <em>170 acessos ao QR code</em>
-                gerando dados concretos de engajamento.
+                <strong>Projeção conservadora:</strong> em um evento de 2.000 participantes,
+                uma adesão de 20% ao Ponto de Conexão representa 400 fotos impressas e,
+                potencialmente, 170 acessos mensuráveis ao QR code.
             </p>
         </div>
 
         <div class="rodape-pagina">
-            <span class="marca">GAVISION STUDIO</span>
-            <span>Proposta BPE · Página 6</span>
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 06</span>
         </div>
     </div>
 
-    <!-- ============ PÁGINA 7 — PROPOSTA DE ATIVAÇÃO ============ -->
+    <!-- ============ PÁGINA 7 — ESCOPO DE ATIVAÇÃO ============ -->
     <div class="pagina">
-        <h2><span class="num">5</span>Proposta de Ativação no BPE</h2>
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
+        </div>
+
+        <h2><span class="num-secao">06</span>Escopo de Ativação</h2>
+        <div class="subtitulo-secao">Entregáveis da Gavision Studio</div>
 
         <p>
-            A proposta abaixo é adaptável ao espaço disponível, ao fluxo do evento e ao tempo
-            de montagem permitido. A Gavision assume a operação completa do Ponto de Conexão.
+            O escopo abaixo é adaptável ao espaço disponível, ao fluxo do evento e ao
+            tempo de montagem autorizado. A Gavision assume a operação completa do Ponto
+            de Conexão.
         </p>
 
-        <h3>O que a Gavision entrega</h3>
-
-        <ul>
-            <li>
-                <strong>Estrutura física:</strong> ponto de ativação com identidade visual do BPE.
-            </li>
-            <li>
-                <strong>Tecnologia:</strong> câmeras Instax, impressoras Link portáteis e
-                aplicativo Instax Biz configurado.
-            </li>
-            <li>
-                <strong>Template personalizado:</strong> criação da moldura exclusiva com a
-                logo e o tema do BPE.
-            </li>
-            <li>
-                <strong>Operação:</strong> equipe da Gavision presente durante todo o evento.
-            </li>
-            <li>
-                <strong>QR code dinâmico:</strong> configuração do destino e possibilidade de
-                alteração em tempo real.
-            </li>
-            <li>
-                <strong>Relatório pós-evento:</strong> número de impressões, taxa de acesso ao
-                QR e insights de engajamento.
-            </li>
-        </ul>
-
-        <h3>O que propomos como destino do QR code</h3>
+        <h3>Entregáveis</h3>
 
         <table>
             <tr>
-                <th>Destino</th>
-                <th>Objetivo</th>
+                <th style="width: 38%;">Item</th>
+                <th>Descrição</th>
             </tr>
             <tr>
-                <td><strong>Grupo VIP no WhatsApp</strong></td>
+                <td class="destaque">Estrutura Física</td>
+                <td>Ponto de ativação com ambientação visual alinhada à identidade do BPE.</td>
+            </tr>
+            <tr>
+                <td class="destaque">Tecnologia</td>
+                <td>Câmeras Instax, impressoras Link portáteis e aplicativo Instax Biz configurado.</td>
+            </tr>
+            <tr>
+                <td class="destaque">Template Personalizado</td>
+                <td>Criação da moldura exclusiva com a marca e o tema do BPE.</td>
+            </tr>
+            <tr>
+                <td class="destaque">Operação</td>
+                <td>Equipe da Gavision presente durante todo o evento.</td>
+            </tr>
+            <tr>
+                <td class="destaque">QR Code Dinâmico</td>
+                <td>Configuração do destino e possibilidade de alteração em tempo real.</td>
+            </tr>
+            <tr>
+                <td class="destaque">Relatório Pós-Evento</td>
+                <td>Documento com número de impressões, taxa de acesso ao QR code e insights de engajamento.</td>
+            </tr>
+        </table>
+
+        <h3>Sugestões de Destino para o QR Code</h3>
+
+        <table>
+            <tr>
+                <th style="width: 45%;">Destino</th>
+                <th>Objetivo Estratégico</th>
+            </tr>
+            <tr>
+                <td class="destaque">Grupo VIP no WhatsApp</td>
                 <td>Continuidade do networking após o evento.</td>
             </tr>
             <tr>
-                <td><strong>Pesquisa de satisfação</strong></td>
+                <td class="destaque">Pesquisa de Satisfação</td>
                 <td>Coleta de dados qualitativos sobre o BPE.</td>
             </tr>
             <tr>
-                <td><strong>Instagram oficial do BPE</strong></td>
+                <td class="destaque">Instagram Oficial do BPE</td>
                 <td>Aumento de seguidores e alcance orgânico.</td>
             </tr>
             <tr>
-                <td><strong>Cupom exclusivo</strong></td>
-                <td>Parceria com patrocinadores do evento.</td>
+                <td class="destaque">Cupom Exclusivo</td>
+                <td>Ativação de parcerias com patrocinadores do evento.</td>
             </tr>
         </table>
 
         <div class="rodape-pagina">
-            <span class="marca">GAVISION STUDIO</span>
-            <span>Proposta BPE · Página 7</span>
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 07</span>
         </div>
     </div>
 
-    <!-- ============ PÁGINA 8 — PRÓXIMOS PASSOS ============ -->
+    <!-- ============ PÁGINA 8 — INVESTIMENTO ============ -->
     <div class="pagina">
-        <h2><span class="num">6</span>Próximos Passos</h2>
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
+        </div>
+
+        <h2><span class="num-secao">07</span>Investimento</h2>
+        <div class="subtitulo-secao">Tabela de Valores de Referência</div>
 
         <p>
-            Esta proposta é um ponto de partida. Cada detalhe pode — e deve — ser ajustado
-            às necessidades específicas do BPE.
+            Os valores abaixo correspondem aos preços unitários de referência por
+            impressão, sem aplicação de descontos promocionais ou condições especiais.
+        </p>
+
+        <h3>Preços Unitários por Formato</h3>
+
+        <table>
+            <tr>
+                <th style="width: 30%;">Formato</th>
+                <th>Descrição</th>
+                <th style="width: 22%; text-align: right;">Valor Unitário</th>
+            </tr>
+            <tr>
+                <td class="destaque">Mini</td>
+                <td>Impressão no formato clássico Instax Mini.</td>
+                <td class="valor">R$ 25,00</td>
+            </tr>
+            <tr>
+                <td class="destaque">Square</td>
+                <td>Impressão no formato quadrado Instax Square.</td>
+                <td class="valor">R$ 30,00</td>
+            </tr>
+            <tr>
+                <td class="destaque">Wide</td>
+                <td>Impressão no formato amplo Instax Wide.</td>
+                <td class="valor">R$ 35,00</td>
+            </tr>
+        </table>
+
+        <h3>Serviços Complementares</h3>
+
+        <table>
+            <tr>
+                <th style="width: 55%;">Item</th>
+                <th style="text-align: right;">Condição</th>
+            </tr>
+            <tr>
+                <td class="destaque">Ativação personalizada com moldura exclusiva BPE</td>
+                <td style="text-align: right;">Sob consulta</td>
+            </tr>
+            <tr>
+                <td class="destaque">QR Code dinâmico com painel de métricas</td>
+                <td style="text-align: right;">Sob consulta</td>
+            </tr>
+            <tr>
+                <td class="destaque">Relatório pós-evento com análise de engajamento</td>
+                <td style="text-align: right;">Sob consulta</td>
+            </tr>
+            <tr>
+                <td class="destaque">Operação presencial durante o evento</td>
+                <td style="text-align: right;">Sob consulta</td>
+            </tr>
+        </table>
+
+        <div class="callout">
+            <p>
+                Os valores de ativação, operação e personalização variam conforme o
+                escopo final, o tempo de evento e o volume de impressões. A proposta
+                financeira definitiva será apresentada após reunião de alinhamento.
+            </p>
+        </div>
+
+        <h3>Condições Comerciais</h3>
+        <ul>
+            <li>Parcelamento disponível via link de pagamento.</li>
+            <li>Emissão de nota fiscal eletrônica para pessoa jurídica.</li>
+            <li>Valores sujeitos a alteração sem aviso prévio após o período de validade desta proposta.</li>
+        </ul>
+
+        <div class="rodape-pagina">
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 08</span>
+        </div>
+    </div>
+
+    <!-- ============ PÁGINA 9 — PRÓXIMOS PASSOS ============ -->
+    <div class="pagina">
+        <div class="cabecalho-pagina">
+            <span class="marca-doc">GAVISION STUDIO</span>
+            <span>Proposta Comercial</span>
+        </div>
+
+        <h2><span class="num-secao">08</span>Próximos Passos</h2>
+        <div class="subtitulo-secao">Sequência de Implementação</div>
+
+        <p>
+            Esta proposta é um ponto de partida. Cada detalhe pode e deve ser ajustado
+            às necessidades específicas do BPE. A sequência abaixo organiza o caminho
+            para a implementação.
         </p>
 
         <div class="passos">
-            <div class="passo-item">
-                <div class="passo-num">1</div>
-                <div class="passo-conteudo">
-                    <strong>Reunião de alinhamento</strong>
-                    <p>Conversa de 30 minutos para entender o espaço, o fluxo e as prioridades do BPE.</p>
+            <div class="passo">
+                <div class="passo-num">01</div>
+                <div>
+                    <div class="passo-titulo">Reunião de Alinhamento</div>
+                    <div class="passo-desc">
+                        Conversa de 30 minutos para compreender o espaço, o fluxo do
+                        evento e as prioridades estratégicas da organização.
+                    </div>
                 </div>
             </div>
-
-            <div class="passo-item">
-                <div class="passo-num">2</div>
-                <div class="passo-conteudo">
-                    <strong>Definição do template e destino do QR</strong>
-                    <p>Escolha da moldura personalizada e do link que será acionado durante o evento.</p>
+            <div class="passo">
+                <div class="passo-num">02</div>
+                <div>
+                    <div class="passo-titulo">Definição de Template e Destino do QR Code</div>
+                    <div class="passo-desc">
+                        Escolha da moldura personalizada e do link que será acionado
+                        durante o evento.
+                    </div>
                 </div>
             </div>
-
-            <div class="passo-item">
-                <div class="passo-num">3</div>
-                <div class="passo-conteudo">
-                    <strong>Apresentação da proposta final</strong>
-                    <p>Documento detalhado com valores, cronograma e plano de execução.</p>
+            <div class="passo">
+                <div class="passo-num">03</div>
+                <div>
+                    <div class="passo-titulo">Apresentação da Proposta Final</div>
+                    <div class="passo-desc">
+                        Documento detalhado com valores, cronograma e plano operacional
+                        completo.
+                    </div>
                 </div>
             </div>
-
-            <div class="passo-item">
-                <div class="passo-num">4</div>
-                <div class="passo-conteudo">
-                    <strong>Execução no dia do evento</strong>
-                    <p>Montagem, operação e entrega do relatório pós-evento em até 7 dias úteis.</p>
+            <div class="passo">
+                <div class="passo-num">04</div>
+                <div>
+                    <div class="passo-titulo">Execução no Dia do Evento</div>
+                    <div class="passo-desc">
+                        Montagem, operação e entrega do relatório pós-evento em até
+                        7 dias úteis.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="cta-box">
-            <h3>Vamos conversar?</h3>
-            <p>
-                Estou à disposição para uma conversa rápida e para ajustar esta proposta ao
-                que faz sentido para o BPE.
-            </p>
-            <a href="https://wa.me/5571991370236?text=Ol%C3%A1%21%20Kleison%2C%20gostaria%20de%20conversar%20sobre%20a%20proposta%20da%20Gavision%20Studio%20para%20o%20BPE." 
-               target="_blank" 
-               class="contato">
-                💬 Falar no WhatsApp
-            </a>
+        <h3>Contato</h3>
+        <table>
+            <tr>
+                <th style="width: 30%;">Canal</th>
+                <th>Informação</th>
+            </tr>
+            <tr>
+                <td class="destaque">WhatsApp</td>
+                <td>(71) 99137-0236</td>
+            </tr>
+            <tr>
+                <td class="destaque">Instagram</td>
+                <td>@gavision.studio</td>
+            </tr>
+            <tr>
+                <td class="destaque">Empresa</td>
+                <td>Gavision Studio · Salvador, Bahia</td>
+            </tr>
+        </table>
+
+        <p style="margin-top: 30px;">
+            Coloco-me à disposição para uma conversa breve e para ajustar esta proposta
+            ao que fizer sentido para o Bahia Potência Empreendedora.
+        </p>
+
+        <div class="assinatura">
+            <div class="assinatura-bloco">
+                <div class="linha-nome">Gavision Studio</div>
+                <div class="linha-cargo">Proponente</div>
+            </div>
+            <div class="assinatura-bloco">
+                <div class="linha-nome">Bahia Potência Empreendedora</div>
+                <div class="linha-cargo">Contraparte</div>
+            </div>
         </div>
 
         <div class="rodape-pagina">
-            <span class="marca">GAVISION STUDIO</span>
-            <span>Proposta BPE · Página 8</span>
+            <span class="marca-rodape">GAVISION STUDIO</span>
+            <span>Página 09</span>
         </div>
     </div>
 
